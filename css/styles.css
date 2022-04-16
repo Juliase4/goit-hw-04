@@ -181,6 +181,10 @@ img {
 
 /* ------ГЕРОЙ------ */
 .hero {
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;
     text-align: center;
@@ -190,9 +194,9 @@ img {
         rgba(47, 48, 58, 0.4), 
         rgba(47, 48, 58, 0.4)),
         url(../images/hero-bg.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-title {
@@ -216,6 +220,7 @@ img {
     letter-spacing: 0.06em;
     display: inline;
     cursor: pointer;
+    border: none;
     padding: 10px 32px;
     border-radius: 4px;
     
@@ -237,7 +242,6 @@ img {
     background-color: #188CE8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 } 
-
 
 /* -----ОСОБЕННОСТИ----- */
 /* feature-list */
@@ -265,16 +269,10 @@ img {
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
     
     background: #F5F4FA;
     border-radius: 4px;
-}
-
-/* feature-item-link */
-.feature-item-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* feature-title */
@@ -354,18 +352,21 @@ img {
     margin-right: 0;
 }
 
-/* team-pre-title */
+/* team-name */
 .team-name {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
+/* team-card */
 .team-card {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
+
+/* team-pre-title */
 .team-pre-title {
     font-weight: 500;
     font-size: 16px;
@@ -381,8 +382,9 @@ img {
     font-size: 16px;
     line-height: 1.2;
     letter-spacing: 0.03em;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
+
 .team-soc-list {
     display: flex;
     justify-content: center;
@@ -414,24 +416,24 @@ img {
 .customers {
     background: #FFFFFF;
 }
+
 .customers-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 42px;
     text-align: center;
     letter-spacing: 0.03em;
-    
-    color: var(--title-color);
-
     margin-bottom: var(--typical-margin);
+
+    color: var(--title-color);
 }
 
 .customers-list {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
-.customers-list-group {
+.customers-soc-link {
     width: 170px;
     height: 92px;
     display: flex;
@@ -441,28 +443,23 @@ img {
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
+    fill: #AFB1B8;
 }
 
-.customers-list-group + .customers-list-group {
+.customers-soc-item + .customers-soc-item {
     margin-left: 30px;
 }
 
-.customers-group {
-    width: 106px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.customers-item-link {
-    fill: #AFB1B8;
+.customers-soc-link:hover, .customers-soc-link:focus {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* -----FOOTER----- */
 .footer {
     padding-top: 60px;
     padding-bottom: 60px;
+    display: flex;
 
     background: var(--footer-bg-color);
 }
@@ -507,6 +504,41 @@ img {
     margin-bottom: 0;
 }
 
+.soc-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.footer-soc-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-soc-item + .footer-soc-item {
+    margin-left: 10px;
+}
+
+.footer-soc-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.1);;
+    fill: #FFFFFF;
+}
+
+.footer-soc-link:hover, .footer-soc-link:focus {
+    background-color: var(--accent-color)
+}
+
 /* ---------PORTFOLIO--------- */
 /* -----Портфолио----- */
 .menu-btn {
@@ -516,20 +548,22 @@ img {
     line-height: 1.6;
     letter-spacing: 0.03em;
     padding: 6px 22px;
+    background: #F5F4FA;
+    border-radius: 4px;
     }
 
 .button {
     display: inline;
     cursor: pointer;
-
-    color: var(--first-btn-color);
-    background-color: #F5F4FA;
+    border: none;
 }
 
 .menu-nav :hover,
 .menu-nav :focus {
     display: inline;
     cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
 
     color: var(--second-btn-color);
     background-color: var(--accent-color);
@@ -571,6 +605,14 @@ img {
 
 .filters-item:nth-last-child(-n + 3) {
     margin-bottom: 0;
+}
+
+.filters-item:hover {
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* filters-name */
