@@ -321,7 +321,6 @@ img {
     margin-right: 0;
 }
 
-
 /* -----НАША КОМАНДА----- */
 /* team */
 .team {
@@ -406,7 +405,7 @@ img {
     fill: #AFB1B8;
 }
 
-.team-soc-link:hover, .team-soc-link:focus {
+.team-soc-link:hover, .team-soc-link:focus, .team-soc-link:active {
     background-color: var(--accent-color);
     fill: #FFFFFF;
 }
@@ -450,18 +449,21 @@ img {
     margin-left: 30px;
 }
 
-.customers-soc-link:hover, .customers-soc-link:focus {
+.customers-soc-link:hover, .customers-soc-link:focus, .customers-soc-link:active {
     fill: var(--accent-color);
     border-color: var(--accent-color);
 }
 
 /* -----FOOTER----- */
-.footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+.footer .container {
     display: flex;
 
     background: var(--footer-bg-color);
+}
+
+.footer-contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .logo-footer {
@@ -504,12 +506,19 @@ img {
     margin-bottom: 0;
 }
 
-.soc-title {
+.footer-soc {
+    padding-top: 75px;
+    padding-bottom: 97px;
+    margin-left: 70px;
+}
+
+.footer-soc-title {
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-bottom: 20px;
 
     color: #FFFFFF;
 }
@@ -531,11 +540,11 @@ img {
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(255, 255, 255, 0.1);;
+    background-color: rgba(255, 255, 255, 0.1);
     fill: #FFFFFF;
 }
 
-.footer-soc-link:hover, .footer-soc-link:focus {
+.footer-soc-link:hover, .footer-soc-link:focus, .footer-soc-link:active {
     background-color: var(--accent-color)
 }
 
@@ -558,8 +567,16 @@ img {
     border: none;
 }
 
+.menu-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--typical-margin);
+}
+
 .menu-nav :hover,
-.menu-nav :focus {
+.menu-nav :focus,
+.menu-nav :active
+{
     display: inline;
     cursor: pointer;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -567,12 +584,6 @@ img {
 
     color: var(--second-btn-color);
     background-color: var(--accent-color);
-}
-
-.menu-nav {
-    display: flex;
-    justify-content: center;
-    margin-bottom: var(--typical-margin);
 }
 
 .menu-nav-item {
@@ -586,28 +597,17 @@ img {
 /* -----Категория все----- */
 /* filters-list */
 .filters-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 30px;
 }
 
 /* filters-item */
 .filters-item {
-    margin-right: 30px;
-    margin-bottom: 30px;
-
-    background: #FFFFFF;
+    border: 1px solid transparent;
 }
 
-.filters-item:nth-child(3n) {
-    margin-right: 0;
-}
-
-
-.filters-item:nth-last-child(-n + 3) {
-    margin-bottom: 0;
-}
-
-.filters-item:hover {
+.filters-item:hover, .filters-item:focus {
     border: 1px solid #EEEEEE;
     box-sizing: border-box;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
@@ -642,6 +642,3 @@ img {
 
     color: #757575;
 }
-
-
-
